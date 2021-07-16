@@ -15,7 +15,6 @@ class Database {
     var database: Connection!
     let usersTable = Table("users")
     let userId = Expression<Int>("id")
-    let name = Expression<String>("name")
     let lat = Expression<Double>("lat")
     let long = Expression<Double>("long")
     let address = Expression<String>("address")
@@ -39,7 +38,6 @@ class Database {
             database = try Connection(fileURL.path)
             try database.run(self.usersTable.create { (table) in
                 table.column(self.userId, primaryKey: true)
-                table.column(self.name)
                 table.column(self.lat)
                 table.column(self.long)
                 table.column(self.address)
@@ -65,28 +63,53 @@ class Database {
             addCandy(candy: candy)
         }
     }
+    //Removed due to database
+//    public func addCandy(candy: String){
+//        var substr = ""
+//        for char in candy {
+//
+//            substr.append(char)
+//            if dictionary[substr] != nil {
+//                dictionary[substr]?.append(candy)
+//            } else {
+//                dictionary[substr] = ["\(candy)"]
+//            }
+//        }
+//    }
     public func addCandy(candy: String){
         var substr = ""
         for char in candy {
+            
+            
             substr.append(char)
-            if dictionary[substr] != nil {
-                dictionary[substr]?.append(candy)
-            } else {
-                dictionary[substr] = ["\(candy)"]
+            do{
+                try database.run(candyTrie.insert(candyPrefix <- substr, fullName <- candy))
+            }catch {
+                print(error)
             }
         }
         do{
-            try database.run(candyTable.insert(name <- candy))
+            try database.run(candyTable.insert(candyName <- candy))
         }catch {
             print(error)
         }
     }
     public func addUser (user: UserProfile){
+        
         do{
-            try database.run(candyTable.insert(name <- candy))
+            let row = try database.run(usersTable.insert(lat <- (user.location?.coordinate.latitude)!, long <- (user.location?.coordinate.longitude)!, address <- (user.location?.name)!))
+            for c in user.candies {
+                let query = candyTable.filter(candyName == c)
+                var candyRow: Int!
+                for searchCandy in try database.prepare(query) {
+                   candyRow = searchCandy[candyId]
+                }
+                try database.run(userCandyMap.insert(uid <- (Int)(row), cid <- candyRow))
+            }
         }catch {
             print(error)
         }
+        
     }
     public func top(substr: String, row: Int) -> String{
         if dictionary[substr] == nil{
