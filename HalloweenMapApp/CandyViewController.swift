@@ -107,12 +107,18 @@ class CandyViewController: UIViewController, UITableViewDataSource, UITableViewD
     @objc func nameEdited(_ sender: Any){
         updateAutoComplete()
     }
+    //Removed when adding SQLite
+//    func updateAutoComplete(){
+//        for i in 0...4 {
+//            autocompleteOptions![i] = (data?.top(substr: (self.candySearch?.text)!, row: i))!
+//        }
+//        self.autocomplete.reloadData()
+//    }
     func updateAutoComplete(){
-        for i in 0...4 {
-            autocompleteOptions![i] = (data?.top(substr: (self.candySearch?.text)!, row: i))!
-        }
+        autocompleteOptions! = (data?.top(substr: (self.candySearch?.text)!))!
         self.autocomplete.reloadData()
     }
+
 }
 extension UIViewController
 {

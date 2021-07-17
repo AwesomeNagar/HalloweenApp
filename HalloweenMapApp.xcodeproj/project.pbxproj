@@ -1,0 +1,716 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AD7913E1269CCF2D005957E6 /* CandyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7913E0269CCF2D005957E6 /* CandyViewController.swift */; };
+		AD7913E3269CCF62005957E6 /* AutocompleteCandy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7913E2269CCF62005957E6 /* AutocompleteCandy.swift */; };
+		AD7913E5269CCF90005957E6 /* AvailableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7913E4269CCF90005957E6 /* AvailableViewController.swift */; };
+		AD7913E7269CCFAB005957E6 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7913E6269CCFAB005957E6 /* Database.swift */; };
+		AD7913E9269CCFC9005957E6 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7913E8269CCFC9005957E6 /* InitialViewController.swift */; };
+		AD7913EB269CCFE5005957E6 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7913EA269CCFE5005957E6 /* MapViewController.swift */; };
+		AD7913ED269CD000005957E6 /* StartDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7913EC269CD000005957E6 /* StartDelegate.swift */; };
+		AD7913EF269CD01B005957E6 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7913EE269CD01B005957E6 /* UserProfile.swift */; };
+		AD80C90E269CC972001A39EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD80C90D269CC972001A39EF /* AppDelegate.swift */; };
+		AD80C910269CC972001A39EF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD80C90F269CC972001A39EF /* SceneDelegate.swift */; };
+		AD80C912269CC972001A39EF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD80C911269CC972001A39EF /* ViewController.swift */; };
+		AD80C915269CC972001A39EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD80C913269CC972001A39EF /* Main.storyboard */; };
+		AD80C917269CC973001A39EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD80C916269CC973001A39EF /* Assets.xcassets */; };
+		AD80C91A269CC973001A39EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD80C918269CC973001A39EF /* LaunchScreen.storyboard */; };
+		AD80C925269CC973001A39EF /* HalloweenMapAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD80C924269CC973001A39EF /* HalloweenMapAppTests.swift */; };
+		AD80C930269CC973001A39EF /* HalloweenMapAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD80C92F269CC973001A39EF /* HalloweenMapAppUITests.swift */; };
+		E90A8E964C550FAD3DA029A3 /* Pods_HalloweenMapApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FD60D8120F881B65BAE0F22 /* Pods_HalloweenMapApp.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AD80C921269CC973001A39EF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AD80C902269CC972001A39EF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AD80C909269CC972001A39EF;
+			remoteInfo = HalloweenMapApp;
+		};
+		AD80C92C269CC973001A39EF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AD80C902269CC972001A39EF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AD80C909269CC972001A39EF;
+			remoteInfo = HalloweenMapApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0FD60D8120F881B65BAE0F22 /* Pods_HalloweenMapApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HalloweenMapApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4DDAC41F0D3662AFA76A2C8F /* Pods-HalloweenMapApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HalloweenMapApp.debug.xcconfig"; path = "Target Support Files/Pods-HalloweenMapApp/Pods-HalloweenMapApp.debug.xcconfig"; sourceTree = "<group>"; };
+		9D63C386B80D391B6ADB7892 /* Pods-HalloweenMapApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HalloweenMapApp.release.xcconfig"; path = "Target Support Files/Pods-HalloweenMapApp/Pods-HalloweenMapApp.release.xcconfig"; sourceTree = "<group>"; };
+		AD7913E0269CCF2D005957E6 /* CandyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandyViewController.swift; sourceTree = "<group>"; };
+		AD7913E2269CCF62005957E6 /* AutocompleteCandy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutocompleteCandy.swift; sourceTree = "<group>"; };
+		AD7913E4269CCF90005957E6 /* AvailableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableViewController.swift; sourceTree = "<group>"; };
+		AD7913E6269CCFAB005957E6 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		AD7913E8269CCFC9005957E6 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
+		AD7913EA269CCFE5005957E6 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		AD7913EC269CD000005957E6 /* StartDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartDelegate.swift; sourceTree = "<group>"; };
+		AD7913EE269CD01B005957E6 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		AD80C90A269CC972001A39EF /* HalloweenMapApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HalloweenMapApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD80C90D269CC972001A39EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AD80C90F269CC972001A39EF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		AD80C911269CC972001A39EF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AD80C914269CC972001A39EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AD80C916269CC973001A39EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AD80C919269CC973001A39EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AD80C91B269CC973001A39EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD80C920269CC973001A39EF /* HalloweenMapAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HalloweenMapAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD80C924269CC973001A39EF /* HalloweenMapAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalloweenMapAppTests.swift; sourceTree = "<group>"; };
+		AD80C926269CC973001A39EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD80C92B269CC973001A39EF /* HalloweenMapAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HalloweenMapAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD80C92F269CC973001A39EF /* HalloweenMapAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalloweenMapAppUITests.swift; sourceTree = "<group>"; };
+		AD80C931269CC973001A39EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AD80C907269CC972001A39EF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E90A8E964C550FAD3DA029A3 /* Pods_HalloweenMapApp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD80C91D269CC973001A39EF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD80C928269CC973001A39EF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6D7D7AFBB4C82B618BB1F4C4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0FD60D8120F881B65BAE0F22 /* Pods_HalloweenMapApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AD80C901269CC972001A39EF = {
+			isa = PBXGroup;
+			children = (
+				AD80C90C269CC972001A39EF /* HalloweenMapApp */,
+				AD80C923269CC973001A39EF /* HalloweenMapAppTests */,
+				AD80C92E269CC973001A39EF /* HalloweenMapAppUITests */,
+				AD80C90B269CC972001A39EF /* Products */,
+				EF10EA03CD3F61AE055B667B /* Pods */,
+				6D7D7AFBB4C82B618BB1F4C4 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		AD80C90B269CC972001A39EF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AD80C90A269CC972001A39EF /* HalloweenMapApp.app */,
+				AD80C920269CC973001A39EF /* HalloweenMapAppTests.xctest */,
+				AD80C92B269CC973001A39EF /* HalloweenMapAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AD80C90C269CC972001A39EF /* HalloweenMapApp */ = {
+			isa = PBXGroup;
+			children = (
+				AD80C90D269CC972001A39EF /* AppDelegate.swift */,
+				AD80C90F269CC972001A39EF /* SceneDelegate.swift */,
+				AD80C911269CC972001A39EF /* ViewController.swift */,
+				AD7913E0269CCF2D005957E6 /* CandyViewController.swift */,
+				AD7913E2269CCF62005957E6 /* AutocompleteCandy.swift */,
+				AD7913E4269CCF90005957E6 /* AvailableViewController.swift */,
+				AD7913E6269CCFAB005957E6 /* Database.swift */,
+				AD7913E8269CCFC9005957E6 /* InitialViewController.swift */,
+				AD7913EA269CCFE5005957E6 /* MapViewController.swift */,
+				AD7913EC269CD000005957E6 /* StartDelegate.swift */,
+				AD7913EE269CD01B005957E6 /* UserProfile.swift */,
+				AD80C913269CC972001A39EF /* Main.storyboard */,
+				AD80C916269CC973001A39EF /* Assets.xcassets */,
+				AD80C918269CC973001A39EF /* LaunchScreen.storyboard */,
+				AD80C91B269CC973001A39EF /* Info.plist */,
+			);
+			path = HalloweenMapApp;
+			sourceTree = "<group>";
+		};
+		AD80C923269CC973001A39EF /* HalloweenMapAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				AD80C924269CC973001A39EF /* HalloweenMapAppTests.swift */,
+				AD80C926269CC973001A39EF /* Info.plist */,
+			);
+			path = HalloweenMapAppTests;
+			sourceTree = "<group>";
+		};
+		AD80C92E269CC973001A39EF /* HalloweenMapAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				AD80C92F269CC973001A39EF /* HalloweenMapAppUITests.swift */,
+				AD80C931269CC973001A39EF /* Info.plist */,
+			);
+			path = HalloweenMapAppUITests;
+			sourceTree = "<group>";
+		};
+		EF10EA03CD3F61AE055B667B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4DDAC41F0D3662AFA76A2C8F /* Pods-HalloweenMapApp.debug.xcconfig */,
+				9D63C386B80D391B6ADB7892 /* Pods-HalloweenMapApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AD80C909269CC972001A39EF /* HalloweenMapApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD80C934269CC973001A39EF /* Build configuration list for PBXNativeTarget "HalloweenMapApp" */;
+			buildPhases = (
+				7B3E0F09A3908CB9AA5745CE /* [CP] Check Pods Manifest.lock */,
+				AD80C906269CC972001A39EF /* Sources */,
+				AD80C907269CC972001A39EF /* Frameworks */,
+				AD80C908269CC972001A39EF /* Resources */,
+				6B6428D9FEA744987CE8D652 /* [CP] Copy Pods Resources */,
+				A398AA423135D5B1CFA025B4 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HalloweenMapApp;
+			productName = HalloweenMapApp;
+			productReference = AD80C90A269CC972001A39EF /* HalloweenMapApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AD80C91F269CC973001A39EF /* HalloweenMapAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD80C937269CC973001A39EF /* Build configuration list for PBXNativeTarget "HalloweenMapAppTests" */;
+			buildPhases = (
+				AD80C91C269CC973001A39EF /* Sources */,
+				AD80C91D269CC973001A39EF /* Frameworks */,
+				AD80C91E269CC973001A39EF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AD80C922269CC973001A39EF /* PBXTargetDependency */,
+			);
+			name = HalloweenMapAppTests;
+			productName = HalloweenMapAppTests;
+			productReference = AD80C920269CC973001A39EF /* HalloweenMapAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		AD80C92A269CC973001A39EF /* HalloweenMapAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD80C93A269CC973001A39EF /* Build configuration list for PBXNativeTarget "HalloweenMapAppUITests" */;
+			buildPhases = (
+				AD80C927269CC973001A39EF /* Sources */,
+				AD80C928269CC973001A39EF /* Frameworks */,
+				AD80C929269CC973001A39EF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AD80C92D269CC973001A39EF /* PBXTargetDependency */,
+			);
+			name = HalloweenMapAppUITests;
+			productName = HalloweenMapAppUITests;
+			productReference = AD80C92B269CC973001A39EF /* HalloweenMapAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AD80C902269CC972001A39EF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					AD80C909269CC972001A39EF = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+					AD80C91F269CC973001A39EF = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = AD80C909269CC972001A39EF;
+					};
+					AD80C92A269CC973001A39EF = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = AD80C909269CC972001A39EF;
+					};
+				};
+			};
+			buildConfigurationList = AD80C905269CC972001A39EF /* Build configuration list for PBXProject "HalloweenMapApp" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AD80C901269CC972001A39EF;
+			productRefGroup = AD80C90B269CC972001A39EF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AD80C909269CC972001A39EF /* HalloweenMapApp */,
+				AD80C91F269CC973001A39EF /* HalloweenMapAppTests */,
+				AD80C92A269CC973001A39EF /* HalloweenMapAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AD80C908269CC972001A39EF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD80C91A269CC973001A39EF /* LaunchScreen.storyboard in Resources */,
+				AD80C917269CC973001A39EF /* Assets.xcassets in Resources */,
+				AD80C915269CC972001A39EF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD80C91E269CC973001A39EF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD80C929269CC973001A39EF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6B6428D9FEA744987CE8D652 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HalloweenMapApp/Pods-HalloweenMapApp-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HalloweenMapApp/Pods-HalloweenMapApp-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HalloweenMapApp/Pods-HalloweenMapApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7B3E0F09A3908CB9AA5745CE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HalloweenMapApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A398AA423135D5B1CFA025B4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HalloweenMapApp/Pods-HalloweenMapApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HalloweenMapApp/Pods-HalloweenMapApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HalloweenMapApp/Pods-HalloweenMapApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AD80C906269CC972001A39EF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD7913E3269CCF62005957E6 /* AutocompleteCandy.swift in Sources */,
+				AD80C912269CC972001A39EF /* ViewController.swift in Sources */,
+				AD7913E5269CCF90005957E6 /* AvailableViewController.swift in Sources */,
+				AD80C90E269CC972001A39EF /* AppDelegate.swift in Sources */,
+				AD7913EB269CCFE5005957E6 /* MapViewController.swift in Sources */,
+				AD7913EF269CD01B005957E6 /* UserProfile.swift in Sources */,
+				AD7913ED269CD000005957E6 /* StartDelegate.swift in Sources */,
+				AD7913E1269CCF2D005957E6 /* CandyViewController.swift in Sources */,
+				AD7913E7269CCFAB005957E6 /* Database.swift in Sources */,
+				AD80C910269CC972001A39EF /* SceneDelegate.swift in Sources */,
+				AD7913E9269CCFC9005957E6 /* InitialViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD80C91C269CC973001A39EF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD80C925269CC973001A39EF /* HalloweenMapAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD80C927269CC973001A39EF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD80C930269CC973001A39EF /* HalloweenMapAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AD80C922269CC973001A39EF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AD80C909269CC972001A39EF /* HalloweenMapApp */;
+			targetProxy = AD80C921269CC973001A39EF /* PBXContainerItemProxy */;
+		};
+		AD80C92D269CC973001A39EF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AD80C909269CC972001A39EF /* HalloweenMapApp */;
+			targetProxy = AD80C92C269CC973001A39EF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AD80C913269CC972001A39EF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AD80C914269CC972001A39EF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AD80C918269CC973001A39EF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AD80C919269CC973001A39EF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AD80C932269CC973001A39EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AD80C933269CC973001A39EF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AD80C935269CC973001A39EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4DDAC41F0D3662AFA76A2C8F /* Pods-HalloweenMapApp.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z5SKMWNHBK;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
+				INFOPLIST_FILE = HalloweenMapApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = nagar.HalloweenMapApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AD80C936269CC973001A39EF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D63C386B80D391B6ADB7892 /* Pods-HalloweenMapApp.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z5SKMWNHBK;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
+				INFOPLIST_FILE = HalloweenMapApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = nagar.HalloweenMapApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		AD80C938269CC973001A39EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = HalloweenMapAppTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = nagar.HalloweenMapAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HalloweenMapApp.app/HalloweenMapApp";
+			};
+			name = Debug;
+		};
+		AD80C939269CC973001A39EF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = HalloweenMapAppTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = nagar.HalloweenMapAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HalloweenMapApp.app/HalloweenMapApp";
+			};
+			name = Release;
+		};
+		AD80C93B269CC973001A39EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = HalloweenMapAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = nagar.HalloweenMapAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HalloweenMapApp;
+			};
+			name = Debug;
+		};
+		AD80C93C269CC973001A39EF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = HalloweenMapAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = nagar.HalloweenMapAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HalloweenMapApp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AD80C905269CC972001A39EF /* Build configuration list for PBXProject "HalloweenMapApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD80C932269CC973001A39EF /* Debug */,
+				AD80C933269CC973001A39EF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD80C934269CC973001A39EF /* Build configuration list for PBXNativeTarget "HalloweenMapApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD80C935269CC973001A39EF /* Debug */,
+				AD80C936269CC973001A39EF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD80C937269CC973001A39EF /* Build configuration list for PBXNativeTarget "HalloweenMapAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD80C938269CC973001A39EF /* Debug */,
+				AD80C939269CC973001A39EF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD80C93A269CC973001A39EF /* Build configuration list for PBXNativeTarget "HalloweenMapAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD80C93B269CC973001A39EF /* Debug */,
+				AD80C93C269CC973001A39EF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AD80C902269CC972001A39EF /* Project object */;
+}

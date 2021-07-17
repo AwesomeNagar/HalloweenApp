@@ -11,31 +11,34 @@ import GooglePlaces
 import SQLite
 class Database {
     var candies: [String]!
-    var dictionary : [String:[String]]!
+    //var dictionary : [String:[String]]!
     var database: Connection!
-    let usersTable = Table("users")
+    let usersTable = Table("usersTable")
     let userId = Expression<Int>("id")
     let lat = Expression<Double>("lat")
     let long = Expression<Double>("long")
     let address = Expression<String>("address")
     
-    let candyTable = Table("candies")
-    let candyId = Expression<Int>("id")
-    let candyName = Expression<String>("candy")
+    let candyTable = Table("candyTable")
+    let candyId = Expression<Int>("candyId")
+    let candyName = Expression<String>("candyName")
     
     let userCandyMap = Table("userToCandy")
-    let uid = Expression<Int>("userid")
-    let cid = Expression<Int>("candyid")
+    let uid = Expression<Int>("uid")
+    let cid = Expression<Int>("cid")
     
     let candyTrie = Table("candyTrie")
     let candyPrefix = Expression<String>("candyPrefix")
     let fullName = Expression<String>("fullName")
     init(){
-        
         do {
-            let documentDirectory = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-            let fileURL = documentDirectory.appendingPathComponent("users").appendingPathComponent("sqlite3")
-            database = try Connection(fileURL.path)
+//            let documentDirectory = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+//            let fileURL = documentDirectory.appendingPathComponent("users").appendingPathComponent("sqlite3")
+            let path = NSSearchPathForDirectoriesInDomains(
+                .documentDirectory, .userDomainMask, true
+            ).first!
+            let database = try Connection("\(path)/db.sqlite3")
+            self.database = database
             try database.run(self.usersTable.create { (table) in
                 table.column(self.userId, primaryKey: true)
                 table.column(self.lat)
@@ -44,7 +47,7 @@ class Database {
             })
             try database.run(self.candyTable.create { (table) in
                 table.column(self.candyId, primaryKey: true)
-                table.column(self.candyName)
+                table.column(self.candyName, unique: true)
             })
             try database.run(self.userCandyMap.create { (table) in
                 table.column(self.uid)
@@ -58,12 +61,11 @@ class Database {
             print(error)
         }
         candies = ["Skittles", "M&Ms", "Twix", "Snickers", "Almond Joy", "Mystery", "Starbursts", "Sour Patch", "Sour Gummies", "Swedish Fish"]
-        dictionary = [:]
         for candy in candies {
             addCandy(candy: candy)
         }
     }
-    //Removed due to database
+    //Removed due to SQLite
 //    public func addCandy(candy: String){
 //        var substr = ""
 //        for char in candy {
@@ -77,10 +79,16 @@ class Database {
 //        }
 //    }
     public func addCandy(candy: String){
+        do{
+            if (try database.pluck(candyTable.filter (candyName == candy))) != nil {
+                return
+            }
+            try database.run(candyTable.insert(candyName <- candy))
+        }catch {
+            print(error)
+        }
         var substr = ""
         for char in candy {
-            
-            
             substr.append(char)
             do{
                 try database.run(candyTrie.insert(candyPrefix <- substr, fullName <- candy))
@@ -88,11 +96,7 @@ class Database {
                 print(error)
             }
         }
-        do{
-            try database.run(candyTable.insert(candyName <- candy))
-        }catch {
-            print(error)
-        }
+        
     }
     public func addUser (user: UserProfile){
         
@@ -111,13 +115,30 @@ class Database {
         }
         
     }
-    public func top(substr: String, row: Int) -> String{
-        if dictionary[substr] == nil{
-            return ""
+    //Removed when adding SQLite
+//    public func top(substr: String, row: Int) -> String{
+//        if dictionary[substr] == nil{
+//            return ""
+//        }
+//        if row >= dictionary[substr]!.count {
+//            return ""
+//        }
+//        return dictionary[substr]![row]
+//    }
+    public func top(substr: String) -> [String]{
+        var retval = ["","","","",""]
+        do {
+            var ind = 0
+            for candyRow in try database.prepare(candyTrie.filter(candyPrefix == substr)){
+                retval[ind] = candyRow[fullName]
+                ind += 1
+                if ind == retval.count {
+                    break
+                }
+            }
+        }catch{
+            print(error)
         }
-        if row >= dictionary[substr]!.count {
-            return ""
-        }
-        return dictionary[substr]![row]
+        return retval
     }
 }
