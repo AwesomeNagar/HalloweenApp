@@ -8,6 +8,7 @@
 import UIKit
 import GoogleMaps
 class MapViewController: UIViewController {
+    var database: Database = Database()
     var user: UserProfile?
     let buffer: CGFloat = 10
     var present: Bool = false
@@ -16,11 +17,12 @@ class MapViewController: UIViewController {
         
     }
     func setUser(userProf: UserProfile){
+       database.addUser(user: userProf)
        user = userProf
         let camera = GMSCameraPosition.camera(withLatitude: (user?.location?.coordinate.latitude)!, longitude: (user?.location?.coordinate.longitude)!, zoom: 36.0)
         let mapView = GMSMapView.map(withFrame: self.view.frame, camera: camera)
         self.view.addSubview(mapView)
-
+        
       let calendar = Calendar.current
         let now = Date()
         let startTime = calendar.date(

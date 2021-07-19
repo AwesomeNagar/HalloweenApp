@@ -14,7 +14,7 @@ class UserProfile{
     var owner: Bool?
     var location: GMSPlace?
     var candies: [String] = []
-    var startHour: Int = 0
+    var startHour: Int = 0      
     var startMin: Int = 0
     var endHour: Int = 23
     var endMin: Int = 59

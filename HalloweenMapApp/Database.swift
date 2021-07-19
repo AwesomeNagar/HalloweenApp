@@ -14,11 +14,15 @@ class Database {
     //var dictionary : [String:[String]]!
     var database: Connection!
     let usersTable = Table("usersTable")
-    let userId = Expression<Int>("id")
+    let userId = Expression<Int>("userId")
     let lat = Expression<Double>("lat")
     let long = Expression<Double>("long")
     let address = Expression<String>("address")
-    
+    let startHour = Expression<Int>("startHour")
+    let startMinute = Expression<Int>("startMinute")
+    let endHour = Expression<Int>("endHour")
+    let endMin = Expression<Int>("endMin")
+
     let candyTable = Table("candyTable")
     let candyId = Expression<Int>("candyId")
     let candyName = Expression<String>("candyName")
@@ -44,6 +48,11 @@ class Database {
                 table.column(self.lat)
                 table.column(self.long)
                 table.column(self.address)
+                table.column(self.startHour)
+                table.column(self.startMinute)
+                table.column(self.endMin)
+                table.column(self.endHour)
+
             })
             try database.run(self.candyTable.create { (table) in
                 table.column(self.candyId, primaryKey: true)
@@ -101,7 +110,7 @@ class Database {
     public func addUser (user: UserProfile){
         
         do{
-            let row = try database.run(usersTable.insert(lat <- (user.location?.coordinate.latitude)!, long <- (user.location?.coordinate.longitude)!, address <- (user.location?.name)!))
+            let row = try database.run(usersTable.insert(lat <- (user.location?.coordinate.latitude)!, long <- (user.location?.coordinate.longitude)!, address <- (user.location?.name)!, startHour <- user.startHour, startMinute <- user.startMin, endHour <- user.endHour, endMin <- user.endMin))
             for c in user.candies {
                 let query = candyTable.filter(candyName == c)
                 var candyRow: Int!
