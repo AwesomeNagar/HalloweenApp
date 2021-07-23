@@ -6,6 +6,7 @@ target 'HalloweenMapApp' do
   pod 'GoogleMaps'
   pod 'GooglePlaces'
   pod 'SQLite.swift', '0.12.0'
+  pod 'GoogleSignIn'
 end
 post_install do |installer|
   installer.pods_project.build_configurations.each do |config|

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qqU-Ug-oVa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Tp8-fC-sXn">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
@@ -11,7 +11,7 @@
         <!--Initial View Controller-->
         <scene sceneID="ibu-mb-UQs">
             <objects>
-                <viewController id="qqU-Ug-oVa" customClass="InitialViewController" customModule="GoogleMapProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="qqU-Ug-oVa" customClass="InitialViewController" customModule="HalloweenMapApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mX9-MN-AMz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -26,7 +26,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="LaunchView" id="BYZ-38-t0r" customClass="ViewController" customModule="GoogleMapProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LaunchView" id="BYZ-38-t0r" customClass="ViewController" customModule="HalloweenMapApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -41,7 +41,7 @@
         <!--Map View Controller-->
         <scene sceneID="xyZ-ID-RNE">
             <objects>
-                <viewController storyboardIdentifier="MapView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="FqU-LG-cfR" customClass="MapViewController" customModule="GoogleMapProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="FqU-LG-cfR" customClass="MapViewController" customModule="HalloweenMapApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="D19-Gp-6ZT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -56,7 +56,7 @@
         <!--Candy View Controller-->
         <scene sceneID="ZYf-cK-qjl">
             <objects>
-                <viewController storyboardIdentifier="CandyView" id="LX3-4P-cNJ" customClass="CandyViewController" customModule="GoogleMapProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CandyView" id="LX3-4P-cNJ" customClass="CandyViewController" customModule="HalloweenMapApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XlO-cZ-30r">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -71,7 +71,7 @@
         <!--Available View Controller-->
         <scene sceneID="hr7-gj-tDj">
             <objects>
-                <viewController storyboardIdentifier="AvailableView" id="U9d-gc-oyW" customClass="AvailableViewController" customModule="GoogleMapProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AvailableView" id="U9d-gc-oyW" customClass="AvailableViewController" customModule="HalloweenMapApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="He9-PE-ru4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -82,6 +82,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oNa-EH-Iob" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-177" y="-1256"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="cte-bG-MDh">
+            <objects>
+                <viewController id="Tp8-fC-sXn" customClass="LoginViewController" customModule="HalloweenMapApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yNZ-gZ-NyL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="bjY-Uz-aQu"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YsE-6f-RjX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-807" y="-621"/>
         </scene>
     </scenes>
     <resources>

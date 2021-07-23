@@ -14,7 +14,7 @@ class MapViewController: UIViewController {
     var present: Bool = false
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
     }
     func setUser(userProf: UserProfile){
        database.addUser(user: userProf)
