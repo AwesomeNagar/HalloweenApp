@@ -29,11 +29,9 @@ class ViewController: UIViewController, StartDelegate, TimeDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         placesClient = GMSPlacesClient.shared()
-        
-        user = UserProfile()
-        
+
         forwardButton = UIButton(frame: bufferedRect(x:0,y:view.frame.maxY-100 ,width: view.frame.maxX,height: 100))
-        forwardButton?.setTitle("Go To Map", for: .normal)
+        forwardButton?.setTitle("Save And Go To Map", for: .normal)
         forwardButton?.backgroundColor = .black
         forwardButton?.addTarget(self, action: #selector(forwardButtonClicked), for: .touchUpInside)
         self.view.addSubview(forwardButton!)

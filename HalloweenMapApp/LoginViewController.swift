@@ -7,11 +7,16 @@
 
 import Foundation
 import AuthenticationServices
+import GoogleSignIn
 class LoginViewController: UIViewController {
     var loginProviderStackView: UIStackView!
     let buffer: CGFloat = 10
+    var signInButton: GIDSignInButton!
+    var signOutButton: UIButton!
     
+    let signInConfig = GIDConfiguration.init(clientID: "768235434695-q2fbmmmiidn87jcbe6gu4uh564repgnb.apps.googleusercontent.com")
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         loginProviderStackView = UIStackView(frame: bufferedRect(x:0,y:100 ,width: view.frame.maxX,height: 100))
         loginProviderStackView.axis = .vertical
@@ -22,23 +27,22 @@ class LoginViewController: UIViewController {
         backbutton.addTarget(self, action: #selector(buttonClicked), for: .touchUpInside)
         self.view.addSubview(backbutton)
        
-        let authorizationButton = ASAuthorizationAppleIDButton()
-        authorizationButton.addTarget(self, action: #selector(handleAuthorizationAppleIDButtonPress), for: .touchUpInside)
-        self.loginProviderStackView.addArrangedSubview(authorizationButton)
+        signInButton = GIDSignInButton()
+        signInButton.addTarget(self, action: #selector(signIn(_:)), for: .touchUpInside)
+        self.loginProviderStackView.addArrangedSubview(signInButton)
+        
         
     }
-    
-    @objc
-    func handleAuthorizationAppleIDButtonPress() {
-        let appleIDProvider = ASAuthorizationAppleIDProvider()
-        let request = appleIDProvider.createRequest()
-        request.requestedScopes = [.fullName, .email]
-        
-        let authorizationController = ASAuthorizationController(authorizationRequests: [request])
-        authorizationController.delegate = self
-        authorizationController.presentationContextProvider = self
-        authorizationController.performRequests()
+    @objc func signIn(_ sender: Any) {
+        GIDSignIn.sharedInstance.signIn(with: signInConfig, presenting: self) { user, error in
+            guard error == nil else { return }
+            let homeView = self.storyboard?.instantiateViewController(withIdentifier: "LaunchView") as! ViewController
+            homeView.modalPresentationStyle = .fullScreen
+            homeView.user = UserProfile(emailAddress: (user?.profile!.email)!)
+            self.present(homeView, animated: true)
+        }
     }
+
     @objc func buttonClicked(_ sender: Any) {
         self.dismiss(animated: true)
     }
@@ -48,62 +52,3 @@ class LoginViewController: UIViewController {
     }
 }
 
-extension LoginViewController: ASAuthorizationControllerDelegate {
-    /// - Tag: did_complete_authorization
-    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
-        switch authorization.credential {
-        case let appleIDCredential as ASAuthorizationAppleIDCredential:
-            
-            // Create an account in your system.
-            let userIdentifier = appleIDCredential.user
-            let fullName = appleIDCredential.fullName
-            let email = appleIDCredential.email
-            
-            // For the purpose of this demo app, store the `userIdentifier` in the keychain.
-            self.saveUserInKeychain(userIdentifier)
-            
-            // For the purpose of this demo app, show the Apple ID credential information in the `ResultViewController`.
-        case let passwordCredential as ASPasswordCredential:
-        
-            // Sign in using an existing iCloud Keychain credential.
-            let username = passwordCredential.user
-            let password = passwordCredential.password
-            
-            // For the purpose of this demo app, show the password credential as an alert.
-            DispatchQueue.main.async {
-                self.showPasswordCredentialAlert(username: username, password: password)
-            }
-            
-        default:
-            break
-        }
-    }
-    
-    private func saveUserInKeychain(_ userIdentifier: String) {
-//        do {
-//            try KeychainItem(service: "com.example.apple-samplecode.juice", account: "userIdentifier").saveItem(userIdentifier)
-//        } catch {
-//            print("Unable to save userIdentifier to keychain.")
-//        }
-    }
-    
-    private func showPasswordCredentialAlert(username: String, password: String) {
-        let message = "The app has received your selected credential from the keychain. \n\n Username: \(username)\n Password: \(password)"
-        let alertController = UIAlertController(title: "Keychain Credential Received",
-                                                message: message,
-                                                preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
-        self.present(alertController, animated: true, completion: nil)
-    }
-    
-    /// - Tag: did_complete_error
-    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
-        // Handle error.
-    }
-}
-extension LoginViewController: ASAuthorizationControllerPresentationContextProviding {
-    /// - Tag: provide_presentation_anchor
-    func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
-        return self.view.window!
-    }
-}

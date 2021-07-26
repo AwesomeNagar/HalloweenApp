@@ -15,6 +15,7 @@ class Database {
     var database: Connection!
     let usersTable = Table("usersTable")
     let userId = Expression<Int>("userId")
+    let userEmail = Expression<String>("userEmail")
     let lat = Expression<Double>("lat")
     let long = Expression<Double>("long")
     let address = Expression<String>("address")
@@ -46,6 +47,7 @@ class Database {
             try database.run(self.usersTable.create { (table) in
                 table.column(self.userId, primaryKey: true)
                 table.column(self.lat)
+                table.column(self.userEmail, unique: true)
                 table.column(self.long)
                 table.column(self.address)
                 table.column(self.startHour)
@@ -110,7 +112,7 @@ class Database {
     public func addUser (user: UserProfile){
         
         do{
-            let row = try database.run(usersTable.insert(lat <- (user.location?.coordinate.latitude)!, long <- (user.location?.coordinate.longitude)!, address <- (user.location?.name)!, startHour <- user.startHour, startMinute <- user.startMin, endHour <- user.endHour, endMin <- user.endMin))
+            let row = try database.run(usersTable.insert(userEmail <- user.email,lat <- (user.location?.coordinate.latitude)!, long <- (user.location?.coordinate.longitude)!, address <- (user.location?.name)!, startHour <- user.startHour, startMinute <- user.startMin, endHour <- user.endHour, endMin <- user.endMin))
             for c in user.candies {
                 let query = candyTable.filter(candyName == c)
                 var candyRow: Int!
@@ -123,6 +125,20 @@ class Database {
             print(error)
         }
         
+    }
+    
+    public func getUser(email: String ) -> UserProfile{
+        do{
+            var retUser = UserProfile(emailAddress: email)
+            let query = candyTable.filter(userEmail == email)
+            for user in try database.prepare(query) {
+                
+            }
+        }catch{
+            print(error)
+        }
+        
+        return UserProfile(emailAddress: "")
     }
     //Removed when adding SQLite
 //    public func top(substr: String, row: Int) -> String{

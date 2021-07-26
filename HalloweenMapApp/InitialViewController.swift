@@ -28,7 +28,7 @@ class InitialViewController: UIViewController {
     }
     
     @objc func homeButtonClicked(_ sender: Any) {
-        let homeView = self.storyboard?.instantiateViewController(withIdentifier: "LaunchView") as! ViewController
+        let homeView = self.storyboard?.instantiateViewController(withIdentifier: "LoginView") as! LoginViewController
         homeView.modalPresentationStyle = .fullScreen
         present(homeView, animated: true)
     }

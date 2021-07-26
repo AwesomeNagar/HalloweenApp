@@ -10,7 +10,7 @@ import GoogleMaps
 import GooglePlaces
 
 class UserProfile{
-    var name: String = ""
+    var email: String = ""
     var owner: Bool?
     var location: GMSPlace?
     var candies: [String] = []
@@ -18,6 +18,9 @@ class UserProfile{
     var startMin: Int = 0
     var endHour: Int = 23
     var endMin: Int = 59
+    init(emailAddress: String){
+        email = emailAddress
+    }
     func setLoc(place: GMSPlace){
         location = place
     }
@@ -29,9 +32,6 @@ class UserProfile{
         endHour = hour
         endMin = min
     }
-    func setName(str: String){
-        name = str
-    }
     func isOwner(bool: Bool){
         owner = bool
     }
@@ -39,3 +39,5 @@ class UserProfile{
         candies = arr
     }
 }
+
+//TODO Change GMSPlace into Lat Lng and Name of Place
