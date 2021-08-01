@@ -18,11 +18,16 @@ class UserProfile{
     var startMin: Int = 0
     var endHour: Int = 23
     var endMin: Int = 59
+    var placeId: String?
     init(emailAddress: String){
         email = emailAddress
     }
     func setLoc(place: GMSPlace){
         location = place
+        placeId = place.placeID
+    }
+    func setPlaceId(id: String){
+        placeId = id
     }
     func setStart(hour: Int, min: Int){
         startHour = hour
@@ -37,6 +42,9 @@ class UserProfile{
     }
     func setCandies(arr: [String]){
         candies = arr
+    }
+    func addCandy(candy: String){
+        candies.append(candy)
     }
 }
 

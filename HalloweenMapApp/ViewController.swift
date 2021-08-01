@@ -105,7 +105,7 @@ class ViewController: UIViewController, StartDelegate, TimeDelegate {
         homeView.modalPresentationStyle = .fullScreen
         let token = GMSAutocompleteSessionToken.init()
         let placeFields: GMSPlaceField = [.name, .formattedAddress, .coordinate, .placeID]
-        placesClient?.fetchPlace(fromPlaceID: (user?.location?.placeID)!,
+        placesClient?.fetchPlace(fromPlaceID: (user?.placeId)!,
                                  placeFields: placeFields,
                                  sessionToken: token, callback: {
           (place: GMSPlace?, error: Error?) in

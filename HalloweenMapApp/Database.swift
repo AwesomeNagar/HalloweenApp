@@ -16,9 +16,7 @@ class Database {
     let usersTable = Table("usersTable")
     let userId = Expression<Int>("userId")
     let userEmail = Expression<String>("userEmail")
-    let lat = Expression<Double>("lat")
-    let long = Expression<Double>("long")
-    let address = Expression<String>("address")
+    let placeId = Expression<String>("PlaceId")
     let startHour = Expression<Int>("startHour")
     let startMinute = Expression<Int>("startMinute")
     let endHour = Expression<Int>("endHour")
@@ -46,10 +44,7 @@ class Database {
             self.database = database
             try database.run(self.usersTable.create { (table) in
                 table.column(self.userId, primaryKey: true)
-                table.column(self.lat)
                 table.column(self.userEmail, unique: true)
-                table.column(self.long)
-                table.column(self.address)
                 table.column(self.startHour)
                 table.column(self.startMinute)
                 table.column(self.endMin)
@@ -112,7 +107,7 @@ class Database {
     public func addUser (user: UserProfile){
         
         do{
-            let row = try database.run(usersTable.insert(userEmail <- user.email,lat <- (user.location?.coordinate.latitude)!, long <- (user.location?.coordinate.longitude)!, address <- (user.location?.name)!, startHour <- user.startHour, startMinute <- user.startMin, endHour <- user.endHour, endMin <- user.endMin))
+            let row = try database.run(usersTable.insert(userEmail <- user.email, placeId <- user.placeId!, startHour <- user.startHour, startMinute <- user.startMin, endHour <- user.endHour, endMin <- user.endMin))
             for c in user.candies {
                 let query = candyTable.filter(candyName == c)
                 var candyRow: Int!
@@ -131,9 +126,21 @@ class Database {
         do{
             var retUser = UserProfile(emailAddress: email)
             let query = candyTable.filter(userEmail == email)
+            var userRow: Int!
             for user in try database.prepare(query) {
-                
+                retUser.setStart(hour: user[startHour], min: user[startMinute])
+                retUser.setEnd(hour: user[endHour], min: user[endMin])
+                retUser.setPlaceId(id: user[placeId])
+                userRow = user[userId]
             }
+            let candyQuery = userCandyMap.filter(uid == userRow)
+            for candy in try database.prepare(candyQuery) {
+                let getCandy = candyTable.filter(candyId == candy[cid])
+                for addCandy in try database.prepare(getCandy){
+                    retUser.addCandy(candy: addCandy[candyName])
+                }
+            }
+            return retUser
         }catch{
             print(error)
         }
